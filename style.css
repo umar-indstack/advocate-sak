@@ -88,7 +88,76 @@ form input.display-none{display:none!important}
 #Top_bar #menu-main-menu .menu-item:hover > a,
 #Top_bar #menu-main-menu .menu-item.current-menu-item > a {
 	color: #3d2879 !important;
-	background-color: transparent !important;
+	background-color: rgba(61, 40, 121, 0.08) !important;
+	transform: translateY(-2px);
+	border-radius: 6px;
+}
+
+#Top_bar #menu-main-menu .menu-item a {
+	position: relative;
+}
+
+#Top_bar #menu-main-menu .menu-item a::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 3px;
+	background: linear-gradient(90deg, #3D2879 0%, #714f27 100%);
+	transition: all 0.3s ease;
+	transform: translateX(-50%);
+	border-radius: 2px;
+}
+
+#Top_bar #menu-main-menu .menu-item:hover > a::before,
+#Top_bar #menu-main-menu .menu-item.current-menu-item > a::before {
+	width: 80%;
+}
+
+#Top_bar #menu-main-menu .menu-item a span {
+	position: relative;
+	z-index: 1;
+	transition: all 0.3s ease;
+}
+
+#Top_bar #menu-main-menu .menu-item:hover > a span {
+	transform: scale(1.05);
+}
+
+/* Top Bar Contact Button Hover Effects */
+#Top_bar .action_button,
+#Top_bar .top-bar-right-button {
+	transition: all 0.3s ease !important;
+	position: relative;
+	overflow: hidden;
+}
+
+#Top_bar .action_button::before,
+#Top_bar .top-bar-right-button::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	transition: width 0.6s ease, height 0.6s ease;
+}
+
+#Top_bar .action_button:hover,
+#Top_bar .top-bar-right-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(61, 40, 121, 0.3);
+	background-color: #714f27 !important;
+}
+
+#Top_bar .action_button:hover::before,
+#Top_bar .top-bar-right-button:hover::before {
+	width: 300px;
+	height: 300px;
 }
 
 #Top_bar #menu-main-menu .menu-item a:after {
@@ -665,29 +734,60 @@ form input.display-none{display:none!important}
 
 /* Contact Us Icons Styling */
 .elementor-icon-list-icon {
-	display: inline-flex;
+	display: inline-flex !important;
 	align-items: center;
 	justify-content: center;
+	visibility: visible !important;
+	opacity: 1 !important;
+	min-width: 24px;
+	width: 24px;
+	height: 24px;
 }
 
 .elementor-icon-list-icon i {
-	font-size: 18px;
-	color: #3D2879;
-	display: inline-block;
+	font-size: 18px !important;
+	color: #3D2879 !important;
+	display: inline-block !important;
 	width: 20px;
 	text-align: center;
+	visibility: visible !important;
+	opacity: 1 !important;
 }
 
 .elementor-icon-list-icon .fas,
-.elementor-icon-list-icon .fa {
+.elementor-icon-list-icon .fa,
+.elementor-icon-list-icon .fab,
+.elementor-icon-list-icon .far {
 	font-family: "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 5 Brands", "FontAwesome" !important;
-	font-weight: 900;
-	font-style: normal;
+	font-weight: 900 !important;
+	font-style: normal !important;
 	font-variant: normal;
 	text-rendering: auto;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	display: inline-block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+/* Ensure specific icons are visible */
+.elementor-icon-list-icon .fa-map-marker:before {
+	content: "\f041" !important;
+}
+
+.elementor-icon-list-icon .fa-envelope:before {
+	content: "\f0e0" !important;
+}
+
+.elementor-icon-list-icon .fa-instagram:before {
+	content: "\f16d" !important;
+	font-family: "Font Awesome 5 Brands" !important;
+	font-weight: 400 !important;
+}
+
+.elementor-icon-list-icon .fa-phone:before {
+	content: "\f095" !important;
 }
 
 .elementor-icon-list-icon .icon {
@@ -709,28 +809,74 @@ form input.display-none{display:none!important}
 	font-weight: 900;
 }
 
-/* Contact section icon list styling */
+/* Contact section icon list styling - Enhanced */
 .elementor-icon-list-items {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
 .elementor-icon-list-item {
 	display: flex;
-	align-items: flex-start;
-	margin-bottom: 15px;
+	align-items: center;
+	margin-bottom: 12px;
+	padding: 10px 0;
+	transition: all 0.3s ease;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.elementor-icon-list-item:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+.elementor-icon-list-item:hover {
+	transform: translateX(5px);
+	padding-left: 5px;
 }
 
 .elementor-icon-list-icon {
 	margin-right: 15px;
 	flex-shrink: 0;
-	min-width: 20px;
+	min-width: 24px;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(61, 40, 121, 0.1);
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+
+.elementor-icon-list-icon i {
+	color: #3D2879;
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+
+.elementor-icon-list-item:hover .elementor-icon-list-icon {
+	background-color: #3D2879;
+	transform: scale(1.1);
+}
+
+.elementor-icon-list-item:hover .elementor-icon-list-icon i {
+	color: #ffffff;
 }
 
 .elementor-icon-list-text {
 	flex: 1;
 	line-height: 1.6;
+	color: #333;
+	font-size: 15px;
+	transition: color 0.3s ease;
+}
+
+.elementor-icon-list-item:hover .elementor-icon-list-text {
+	color: #3D2879;
 }
 
 /* Footer Social Icons Styling */
@@ -762,7 +908,7 @@ ul.social li a {
 	color: #3D2879;
 	text-decoration: none;
 	transition: all 0.3s ease;
-	font-size: 18px;
+	font-size: 35px;
 }
 
 ul.social li a:hover {
@@ -882,7 +1028,7 @@ ul.social li a i.fas {
 	margin: 0;
 	color: #666;
 	line-height: 1.7;
-	font-size: 15px;
+	font-size: 21px;
 	transition: color 0.3s ease;
 }
 
@@ -1276,5 +1422,131 @@ ul.social li a i.fas {
 	.appointment-form {
 		padding: 25px 20px;
 	}
+	
+	/* Icon List Mobile Improvements */
+	.elementor-icon-list-item {
+		padding: 8px 0;
+		margin-bottom: 10px;
+	}
+	
+	.elementor-icon-list-icon {
+		width: 22px;
+		height: 22px;
+		min-width: 22px;
+		margin-right: 12px;
+	}
+	
+	.elementor-icon-list-icon i {
+		font-size: 14px;
+	}
+	
+	.elementor-icon-list-text {
+		font-size: 14px;
+		line-height: 1.5;
+	}
 }
 
+/* Spacing between Why Choose Me and Case Records sections */
+.elementor-element-case-records {
+	margin-top: 60px !important;
+	padding-top: 40px !important;
+}
+
+@media (max-width: 768px) {
+	.elementor-element-case-records {
+		margin-top: 40px !important;
+		padding-top: 30px !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.elementor-element-case-records {
+		margin-top: 30px !important;
+		padding-top: 20px !important;
+	}
+}
+
+/* Hide Footer Icons */
+#Side_slide .social,
+#Side_slide ul.social,
+#Footer .social,
+#Footer ul.social,
+.mfn-footer .social,
+.mfn-footer ul.social,
+footer .social,
+footer ul.social {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	height: 0 !important;
+	overflow: hidden !important;
+}
+
+/* Contact Me Section Styling */
+.contact-me {
+	padding: 0;
+	margin: 0;
+}
+
+.contact-me h3 {
+	font-size: 24px;
+	font-weight: 700;
+	color: #161922;
+	margin-bottom: 20px;
+	margin-top: 0;
+}
+
+.contact-me p {
+	margin: 0 0 15px 0;
+	padding: 0;
+	display: flex;
+	align-items: flex-start;
+	line-height: 1.6;
+	color: #333;
+	font-size: 15px;
+}
+
+.contact-me p:last-child {
+	margin-bottom: 0;
+}
+
+.contact-me p i {
+	margin-right: 12px;
+	color: #3D2879;
+	font-size: 18px;
+	min-width: 24px;
+	text-align: center;
+	margin-top: 2px;
+	flex-shrink: 0;
+}
+
+.contact-me p a {
+	color: #3D2879;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.contact-me p a:hover {
+	color: #714f27;
+	text-decoration: underline;
+}
+
+/* Mobile adjustments for Contact Me */
+@media (max-width: 768px) {
+	.contact-me h3 {
+		font-size: 20px;
+		margin-bottom: 15px;
+	}
+	
+	.contact-me p {
+		font-size: 14px;
+		margin-bottom: 12px;
+		flex-wrap: wrap;
+	}
+	
+	.contact-me p i {
+		font-size: 16px;
+		min-width: 20px;
+		margin-right: 10px;
+	}
+}
