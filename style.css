@@ -1550,3 +1550,55 @@ footer ul.social {
 		margin-right: 10px;
 	}
 }
+
+/* Mobile Image Support for Slider - "Advocating Your Rights and Justice" */
+#slider-1-slide-1-layer-0 picture {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#slider-1-slide-1-layer-0 picture img {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: contain;
+}
+
+@media (max-width: 768px) {
+	#slider-1-slide-1-layer-0 picture img {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+		object-fit: contain;
+	}
+	
+	#rev_slider_1_1_wrapper,
+	#rev_slider_1_1 {
+		min-height: 480px !important;
+	}
+	
+	#slider-1-slide-1-layer-0 {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+}
+
+@media (max-width: 480px) {
+	#rev_slider_1_1_wrapper,
+	#rev_slider_1_1 {
+		min-height: 420px !important;
+	}
+	
+	#slider-1-slide-1-layer-0 {
+		width: 100% !important;
+		height: auto !important;
+		max-width: 100% !important;
+	}
+	
+	#slider-1-slide-1-layer-0 picture img {
+		width: 100% !important;
+		height: auto !important;
+		max-width: 100% !important;
+	}
+}
