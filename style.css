@@ -814,94 +814,109 @@ ul.social li a i.fas {
 	line-height: 1.6;
 }
 
-/* Case Records Card Links */
-.case-record-card-link {
+/* Case Records - Matching Why Choose Style */
+.case-records-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	gap: 20px !important;
+}
+
+.case-record-why-style {
 	text-decoration: none;
 	color: inherit;
 	display: block;
 	height: 100%;
-	transition: transform 0.3s ease;
-}
-
-.case-record-card-link:hover {
-	transform: translateY(-8px);
-}
-
-/* Case Records Year Cards */
-.elementor-element-case-year1 .elementor-widget-wrap,
-.elementor-element-case-year2 .elementor-widget-wrap,
-.elementor-element-case-year3 .elementor-widget-wrap,
-.elementor-element-case-year4 .elementor-widget-wrap {
-	background-color: #ffffff;
-	border-radius: 12px;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-	padding: 35px 25px;
-	border-top: 4px solid #3D2879;
-	text-align: center;
-	min-height: 180px;
-}
-
-.case-record-card-link:hover .elementor-widget-wrap {
-	box-shadow: 0 8px 25px rgba(61, 40, 121, 0.15);
-	border-top-color: #714f27;
-	background-color: #fafafa;
-}
-
-/* Case Records Year Headings */
-.elementor-element-case-year-head1 h3,
-.elementor-element-case-year-head2 h3,
-.elementor-element-case-year-head3 h3,
-.elementor-element-case-year-head4 h3 {
-	color: #3D2879;
-	font-size: 38px;
-	font-weight: 700;
-	margin-bottom: 20px;
-	margin-top: 0;
-}
-
-/* Case Records Year Text */
-.elementor-element-case-year-text1 .elementor-widget-container,
-.elementor-element-case-year-text2 .elementor-widget-container,
-.elementor-element-case-year-text3 .elementor-widget-container,
-.elementor-element-case-year-text4 .elementor-widget-container {
+	border-radius: 8px;
 	padding: 0;
+}
+
+.case-record-why-style:hover {
+	background-color: #f8f9fa;
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(61, 40, 121, 0.15);
+}
+
+.elementor-element-case-head1,
+.elementor-element-case-head2,
+.elementor-element-case-head3,
+.elementor-element-case-head4 {
+	margin-bottom: 12px;
+	text-align: center;
+	padding: 35px 25px 0 25px;
+}
+
+.elementor-element-case-head1 h4,
+.elementor-element-case-head2 h4,
+.elementor-element-case-head3 h4,
+.elementor-element-case-head4 h4 {
+	margin: 0;
+	color: #3D2879;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1.3;
+	transition: color 0.3s ease;
+}
+
+.case-record-why-style:hover .elementor-element-case-head1 h4,
+.case-record-why-style:hover .elementor-element-case-head2 h4,
+.case-record-why-style:hover .elementor-element-case-head3 h4,
+.case-record-why-style:hover .elementor-element-case-head4 h4 {
+	color: #714f27;
+}
+
+.elementor-element-case-text1,
+.elementor-element-case-text2,
+.elementor-element-case-text3,
+.elementor-element-case-text4 {
 	flex-grow: 1;
 	text-align: center;
+	padding: 0 25px 15px 25px;
 }
 
-/* Case Record Stats */
-.case-record-stats {
+.elementor-element-case-text1 .elementor-widget-container,
+.elementor-element-case-text2 .elementor-widget-container,
+.elementor-element-case-text3 .elementor-widget-container,
+.elementor-element-case-text4 .elementor-widget-container {
 	margin: 0;
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	align-items: center;
+	color: #666;
+	line-height: 1.7;
+	font-size: 15px;
+	transition: color 0.3s ease;
 }
 
-.case-count {
+.case-record-why-style:hover .elementor-element-case-text1 .elementor-widget-container,
+.case-record-why-style:hover .elementor-element-case-text2 .elementor-widget-container,
+.case-record-why-style:hover .elementor-element-case-text3 .elementor-widget-container,
+.case-record-why-style:hover .elementor-element-case-text4 .elementor-widget-container {
+	color: #555;
+}
+
+.elementor-element-case-icon1,
+.elementor-element-case-icon2,
+.elementor-element-case-icon3,
+.elementor-element-case-icon4 {
+	padding: 0 25px 25px 25px;
+	margin: 0;
+	text-align: center;
+}
+
+.elementor-element-case-icon1 .elementor-icon,
+.elementor-element-case-icon2 .elementor-icon,
+.elementor-element-case-icon3 .elementor-icon,
+.elementor-element-case-icon4 .elementor-icon {
 	color: #3D2879;
 	font-size: 20px;
-	font-weight: 700;
-	display: block;
+	transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.vakalath-count {
-	color: #666;
-	font-size: 16px;
-	display: block;
-}
-
-/* Case Records Grid Container */
-.elementor-element-case-records-grid .elementor-container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 20px;
+.case-record-why-style:hover .elementor-element-case-icon1 .elementor-icon,
+.case-record-why-style:hover .elementor-element-case-icon2 .elementor-icon,
+.case-record-why-style:hover .elementor-element-case-icon3 .elementor-icon,
+.case-record-why-style:hover .elementor-element-case-icon4 .elementor-icon {
+	transform: translateX(5px);
+	color: #714f27;
 }
 
 /* Responsive adjustments for Case Records section */
@@ -914,26 +929,51 @@ ul.social li a i.fas {
 		font-size: 16px;
 	}
 
-	.elementor-element-case-year1 .elementor-widget-wrap,
-	.elementor-element-case-year2 .elementor-widget-wrap,
-	.elementor-element-case-year3 .elementor-widget-wrap,
-	.elementor-element-case-year4 .elementor-widget-wrap {
-		padding: 25px 20px;
-		margin-bottom: 20px;
+	.case-records-container {
+		gap: 15px !important;
+		padding: 0 15px;
 	}
 
-	.elementor-element-case-year-head1 h3,
-	.elementor-element-case-year-head2 h3,
-	.elementor-element-case-year-head3 h3,
-	.elementor-element-case-year-head4 h3 {
-		font-size: 28px;
+	.elementor-element-case-head1,
+	.elementor-element-case-head2,
+	.elementor-element-case-head3,
+	.elementor-element-case-head4 {
+		padding: 30px 20px 0 20px;
 	}
 
-	.elementor-element-case-year-text1 p,
-	.elementor-element-case-year-text2 p,
-	.elementor-element-case-year-text3 p,
-	.elementor-element-case-year-text4 p {
+	.elementor-element-case-head1 h4,
+	.elementor-element-case-head2 h4,
+	.elementor-element-case-head3 h4,
+	.elementor-element-case-head4 h4 {
+		font-size: 22px;
+	}
+	
+	.elementor-element-case-text1,
+	.elementor-element-case-text2,
+	.elementor-element-case-text3,
+	.elementor-element-case-text4 {
+		padding: 0 20px 15px 20px;
+	}
+
+	.elementor-element-case-text1 .elementor-widget-container,
+	.elementor-element-case-text2 .elementor-widget-container,
+	.elementor-element-case-text3 .elementor-widget-container,
+	.elementor-element-case-text4 .elementor-widget-container {
 		font-size: 14px;
+	}
+	
+	.elementor-element-case-icon1,
+	.elementor-element-case-icon2,
+	.elementor-element-case-icon3,
+	.elementor-element-case-icon4 {
+		padding: 0 20px 25px 20px;
+	}
+
+	.elementor-element-case-icon1 .elementor-icon,
+	.elementor-element-case-icon2 .elementor-icon,
+	.elementor-element-case-icon3 .elementor-icon,
+	.elementor-element-case-icon4 .elementor-icon {
+		font-size: 18px;
 	}
 }
 
