@@ -155,6 +155,87 @@ RS_MODULES.modules["revslider11"] = {once: RS_MODULES.modules["revslider11"]!==u
 
 if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
 
+// Case Count Animation
+function animateCount(element) {
+    const stop = parseInt(element.getAttribute('data-stop'));
+    const speed = parseInt(element.getAttribute('data-speed')) || 1500;
+    const duration = speed;
+    const start = 0;
+    const increment = stop / (duration / 16); // 60fps
+    let current = start;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= stop) {
+            current = stop;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current);
+    }, 16);
+}
+
+// Achievements Counter Animation
+function animateAchievementCounter(element) {
+    const stop = parseInt(element.getAttribute('data-to-value')) || parseInt(element.textContent);
+    const duration = parseInt(element.getAttribute('data-duration')) || 2000;
+    const start = parseInt(element.getAttribute('data-from-value')) || 0;
+    const increment = (stop - start) / (duration / 16); // 60fps
+    let current = start;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= stop) {
+            current = stop;
+            clearInterval(timer);
+        }
+        // Format number with delimiter if needed
+        const delimiter = element.getAttribute('data-delimiter');
+        const formatted = delimiter ? Math.floor(current).toLocaleString() : Math.floor(current);
+        element.textContent = formatted;
+    }, 16);
+}
+
+// Initialize count animations when elements come into view
+document.addEventListener('DOMContentLoaded', function() {
+    // Case Records Count Animation
+    const countElements = document.querySelectorAll('.count-text.animated');
+    
+    if (countElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    entry.target.classList.add('counted');
+                    animateCount(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        countElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+    
+    // Achievements Counter Animation
+    const achievementCounters = document.querySelectorAll('.elementor-counter-number');
+    
+    if (achievementCounters.length > 0) {
+        const achievementObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('achievement-counted')) {
+                    entry.target.classList.add('achievement-counted');
+                    animateAchievementCounter(entry.target);
+                    achievementObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        achievementCounters.forEach(element => {
+            achievementObserver.observe(element);
+        });
+    }
+});
+
 // Appointment Form Handler
 document.addEventListener('DOMContentLoaded', function() {
     const appointmentForm = document.getElementById('appointment-form');
